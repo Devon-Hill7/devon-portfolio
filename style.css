@@ -1,30 +1,44 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    min-width: 800px;
+    min-height: 600px;
+    overflow-x: hidden;
+}
 body {
     color: #d4d4d4;
     background-color: #1e1e1e;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 50px 160px 40px 1fr;
+    grid-template-rows: 35px 40px 1fr;
+    height: 100vh
+}
 .navbar {
-    position: fixed;
-    left: 0;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
     background-color: #1f1f1f;
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
 }
 #fake-navbar {
-    top: 0;
-    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
     height: 35px;
     z-index: 1000;
-    border-bottom: 2px solid #2a2a2a
+    border-bottom: 1px solid #2a2a2a
 }
 
 .vertical {
-    top: 35px;
     width: 50px;
     height: 100%;
     z-index: 999;
-    border-right: 2px solid #2a2a2a;
+    border-right: 1px solid #2a2a2a;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,9 +120,17 @@ body {
     padding: 10px 15px;
 }
 
+#left-icons {
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 
+}
 .left-icon {
-    padding: 10px 10px;
+    padding: 10px;
 }
 
 .size-9 {
@@ -117,11 +139,9 @@ body {
 }
 
 #bottom-icons-container {
-    position: absolute;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
-    bottom: 0;
-    left: 0px;
 }
 
 .bottom-icon {
@@ -134,9 +154,13 @@ body {
 }
 
 #real-navbar {
-    left: 53px;
+    grid-column:  2 / 3;
+    grid-row: 2 / -1;
     width: 160px;
+    height: 100%;
     align-items: flex-start;
+    display: flex;
+    z-index: 998;
 }
 
 .real-navbar-item {
@@ -181,3 +205,116 @@ body {
 .angle-bracket-icon {
     color: #D6560D;
 }
+
+#page-bar {
+    grid-column: 3 / -1;
+    grid-row: 2 / 3;
+    height: 40px;
+    background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+#scrollable-container {
+    grid-column: 3 / -1;
+    grid-row: 3 / -1;
+    overflow-y: auto;
+    display: flex;
+    background-color:#292929;
+}
+#line-numbers {
+    grid-column: 3 / 4;
+    grid-row: 3 / -1;
+    display: flex;
+    height: 100%;
+    width: 40px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    color: #707083;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+#line-numbers div:first-child {
+    margin-top: 5px;
+}
+#editor {
+    flex: 1;
+    grid-column: 4 / -1;
+    grid-row: 3 / -1 ;
+    overflow-y: auto;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    color: #575757;
+    font-family:monospace;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    gap: 3px;
+    white-space: pre;
+}
+
+#editor div:first-child {
+    margin-top: 5px;
+}
+
+.dark-blue {
+    color: #569cd6;
+}
+
+.light-blue {
+    color: #9CDCFE;
+}
+
+.orange {
+    color: #D69D85;
+}
+
+.white {
+    color: #FFFFFF;
+}
+.real-text {
+    color: #FFFFFF;
+    font-family: Consolas, "Courier New", Courier, monospace;
+    text-align: center;
+    width: 100%;
+    padding-left: 0
+}
+#h1-heading {
+    font-size: 100px;
+}
+
+#h3-heading {
+    font-size: 50px;
+}
+
+#h6-heading {
+    font-size: 20px;
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+#scrollable-container::-webkit-scrollbar {
+    width: 8px; /* thin scrollbar like VS Code */
+}
+
+#scrollable-container::-webkit-scrollbar-track {
+    background-color: rgba(41, 41, 41, 0.3); /* slightly transparent dark track */
+}
+
+#scrollable-container::-webkit-scrollbar-thumb {
+    background-color: rgba(150, 150, 150, 0.4); /* light semi-transparent thumb */
+    border-radius: 4px; /* rounded edges like VS Code */
+    border: 2px solid rgba(0,0,0,0); /* optional: space around thumb */
+}
+
+/* Firefox */
+#scrollable-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(150,150,150,0.4) rgba(41,41,41,0.3);
+}
+
+
