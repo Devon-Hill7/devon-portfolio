@@ -19,12 +19,16 @@ body {
     border-bottom: 2px solid #2a2a2a
 }
 
-#left-icon-bar {
+.vertical {
     top: 35px;
     width: 50px;
     height: 100%;
     z-index: 999;
-    border-right: 2px solid #2a2a2a
+    border-right: 2px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #a6a6a6;
 }
 
 .fake-navbar-text {
@@ -52,6 +56,12 @@ body {
   width: 14px;
   height: 14px;
 }
+
+.size-3 {
+    width: 10px;
+    height: 10px;
+}
+
 
 .arrow svg{
     display: block;
@@ -96,12 +106,6 @@ body {
     padding: 10px 15px;
 }
 
-#left-icon-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #a6a6a6;
-}
 
 .left-icon {
     padding: 10px 10px;
@@ -127,4 +131,53 @@ body {
 #selected-icon {
     color: #FFFFFF;
     border-left: 5px solid #569cd6;
+}
+
+#real-navbar {
+    left: 53px;
+    width: 160px;
+    align-items: flex-start;
+}
+
+.real-navbar-item {
+    padding: 8px 0px;
+    color: #a6a6a6;
+    cursor: pointer;
+    font-size: 11px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#real-navbar span:first-child {
+    margin-top: 8px;
+
+}
+
+#folder-name {
+    color: #CFCFCF;
+}
+
+.spread-out{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    padding-left: 20px; 
+}
+.real-navbar-item svg {
+    vertical-align: middle;
+    margin-left: 4px; 
+}
+
+
+.angle-bracket-icon {
+    font-family: monospace
+}
+
+.file {
+    font-size: 13px;
+    color: #B89A74;
+}
+
+.angle-bracket-icon {
+    color: #D6560D;
 }
