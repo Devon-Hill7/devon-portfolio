@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Monocode";
+    src: url('fonts/Monocode-Regular-V0102b.woff2') format('woff2'),
+        url('fonts/Monocode-Regular-V0102b.woff') format('woff');
+}
 body, html {
     margin: 0;
     height: 100%;
@@ -14,7 +19,7 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 50px 160px 40px 1fr;
+    grid-template-columns: 50px 160px 1fr;
     grid-template-rows: 35px 40px 1fr;
     height: 100vh
 }
@@ -223,44 +228,31 @@ body {
     background-color:#292929;
 }
 #line-numbers {
-    grid-column: 3 / 4;
-    grid-row: 3 / -1;
     display: flex;
     height: 100%;
     width: 40px;
+    line-height: 20px;
     flex-direction: column;
     align-items: flex-end;
-    gap: 3px;
     color: #707083;
     font-size: 14px;
     font-family: monospace;
 }
 
-#line-numbers div:first-child {
-    margin-top: 5px;
-}
 #editor {
     flex: 1;
-    grid-column: 4 / -1;
-    grid-row: 3 / -1 ;
     overflow-y: auto;
+    line-height: 20px;
     z-index: 0;
     height: 100%;
     width: 100%;
     color: #575757;
     font-family:monospace;
     font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     padding-left: 10px;
-    gap: 3px;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
-#editor div:first-child {
-    margin-top: 5px;
-}
 
 .dark-blue {
     color: #569cd6;
@@ -279,21 +271,26 @@ body {
 }
 .real-text {
     color: #FFFFFF;
-    font-family: Consolas, "Courier New", Courier, monospace;
+    font-family: Monocode;
     text-align: center;
     width: 100%;
-    padding-left: 0
+    padding-left: 0;
+    white-space: pre-wrap;
+    display: block;
 }
 #h1-heading {
     font-size: 100px;
+    line-height: 100px;
 }
 
 #h3-heading {
-    font-size: 50px;
+    font-size: 60px;
+    line-height: 60px;
 }
 
 #h6-heading {
     font-size: 20px;
+    line-height: 20px;
 }
 
 /* WebKit browsers (Chrome, Edge, Safari) */
