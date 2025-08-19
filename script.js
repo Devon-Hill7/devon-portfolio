@@ -1,6 +1,9 @@
 const scrollableContainer = document.getElementById('scrollable-container');
 const lineNumbers = document.getElementById('line-numbers');
 const editor = document.getElementById('editor');
+const htmlCode = document.getElementById('html-code');
+const javascriptCode = document.getElementById('javascript-code');
+const cssCode = document.getElementById('css-code');
 
 const javaLogo = '<svg fill="#FFFFFF" width="64px" height="64px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M13.168 30.901c5.401 0.346 13.695-0.191 13.891-2.747 0 0-0.377 0.968-4.464 1.738-2.257 0.407-4.855 0.639-7.508 0.639-2.173 0-4.309-0.156-6.398-0.457l0.239 0.028c0-0.001 0.691 0.571 4.24 0.799zM19 1.004s3.117 3.117-2.955 7.91c-4.869 3.845-1.11 6.038-0.001 8.543-2.842-2.566-4.927-4.821-3.529-6.922 2.054-3.085 7.744-4.58 6.486-9.531zM22.393 22.978c5.627-2.924 3.025-5.735 1.21-5.355-0.249 0.047-0.465 0.107-0.674 0.182l0.030-0.009c0.119-0.167 0.283-0.296 0.474-0.369l0.007-0.002c3.593-1.263 6.356 3.725-1.16 5.701 0.046-0.041 0.084-0.090 0.111-0.145l0.001-0.003zM12.616 17.512s-5.451 1.295-1.929 1.764c0.948 0.078 2.052 0.122 3.166 0.122 1.424 0 2.831-0.073 4.218-0.214l-0.174 0.014c2.257-0.19 4.521-0.596 4.521-0.596-0.531 0.232-0.982 0.477-1.409 0.756l0.037-0.022c-5.535 1.456-16.228 0.779-13.149-0.71 1.357-0.703 2.963-1.115 4.665-1.115 0.019 0 0.038 0 0.057 0h-0.003zM25.16 26.627s0.849 0.699-0.933 1.238c-3.389 1.027-14.106 1.336-17.081 0.041-1.070-0.466 0.937-1.112 1.567-1.247 0.291-0.074 0.626-0.117 0.97-0.117 0.023 0 0.045 0 0.068 0.001l-0.003-0c-1.191-0.839-7.693 1.646-3.303 2.358 11.972 1.941 21.821-0.875 18.716-2.274zM17.395 15.344c0.314 0.377 0.505 0.868 0.505 1.402 0 0.719-0.346 1.358-0.88 1.759l-0.006 0.004s3.673-1.897 1.986-4.271c-1.576-2.214-2.784-3.314 3.758-7.108 0-0.001-10.267 2.563-5.363 8.214zM11.346 20.915s-1.285 0.951 0.677 1.155c0.859 0.108 1.852 0.169 2.86 0.169 1.826 0 3.605-0.202 5.315-0.585l-0.162 0.030c0.344 0.322 0.755 0.578 1.209 0.744l0.025 0.008c-7.097 2.076-15.004 0.162-9.925-1.522zM12.065 24.198s-1.146 0.667 0.816 0.892c0.719 0.107 1.548 0.168 2.392 0.168 1.354 0 2.671-0.157 3.934-0.455l-0.116 0.023c0.467 0.285 1.010 0.557 1.577 0.782l0.074 0.026c-5.872 2.516-13.287-0.147-8.676-1.436z"></path></svg>';
 const javascriptLogo = '<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><path d="M14 11.25C14 10.2835 14.7835 9.5 15.75 9.5H17.25C17.6642 9.5 18 9.83579 18 10.25C18 10.6642 17.6642 11 17.25 11H15.75C15.6119 11 15.5 11.1119 15.5 11.25V12.75C15.5 12.8881 15.6119 13 15.75 13H16.25C17.2165 13 18 13.7835 18 14.75V16.25C18 17.2165 17.2165 18 16.25 18H14.75C14.3358 18 14 17.6642 14 17.25C14 16.8358 14.3358 16.5 14.75 16.5H16.25C16.3881 16.5 16.5 16.3881 16.5 16.25V14.75C16.5 14.6119 16.3881 14.5 16.25 14.5H15.75C14.7835 14.5 14 13.7165 14 12.75V11.25Z" fill="#ffffff"></path> <path d="M12.75 10.25C12.75 9.83579 12.4142 9.5 12 9.5C11.5858 9.5 11.25 9.83579 11.25 10.25V16.25C11.25 16.3881 11.1381 16.5 11 16.5H9.75C9.33579 16.5 9 16.8358 9 17.25C9 17.6642 9.33579 18 9.75 18H11C11.9665 18 12.75 17.2165 12.75 16.25V10.25Z" fill="#ffffff"></path> <path d="M3 6.25C3 4.45507 4.45507 3 6.25 3H17.75C19.5449 3 21 4.45507 21 6.25V17.75C21 19.5449 19.5449 21 17.75 21H6.25C4.45507 21 3 19.5449 3 17.75V6.25ZM6.25 4.5C5.2835 4.5 4.5 5.2835 4.5 6.25V17.75C4.5 18.7165 5.2835 19.5 6.25 19.5H17.75C18.7165 19.5 19.5 18.7165 19.5 17.75V6.25C19.5 5.2835 18.7165 4.5 17.75 4.5H6.25Z" fill="#ffffff"></path></svg>';
@@ -14,7 +17,7 @@ const dockerLogo = '<svg width="64px" height="64px" viewBox="0 0 16 16" xmlns="h
 
 
 
-const codeLines = [
+const htmlCodeLines = [
     '&lt;!<span class="dark-blue">DOCTYPE</span> <span class="light-blue">html</span>&gt;',
         '&lt;<span class="dark-blue">head</span>&gt;',
     '   &lt;<span class="dark-blue">link</span> <span class="light-blue">rel</span><span class="white">=</span><span class="orange">"stylesheet"</span> <span class="light-blue">href</span><span class="white">=</span><span class="orange">"<u>projects.css</u>"</span>&gt;',
@@ -29,24 +32,31 @@ const codeLines = [
     '   &lt;<span class="dark-blue">h6</span>&gt;',
     '<span class="real-text" id="h6-heading">&nbsp;&nbsp;Curious mind, growing with every line of code.</span>',
     '   &lt;/<span class="dark-blue">h6</span>&gt;',
-    '   &lt;<span class="dark-blue">h3</span>&gt;',
-    '<span class="real-text" id="h3-heading">About Me</span>',
-    '   &lt;/<span class="dark-blue">h3</span>&gt;',
-    '   &lt;<span class="dark-blue">p</span>&gt;',
-    '<span class="real-text paragraph">Hi, I’m Devon Hill, a Computer Science graduate from Kansas State University with experience in software development, testing, and IT support. During my time as a Teaching Assistant, I supported students in debugging and strengthening their programming skills. As a Summer Support Assistant in IT, I gained hands-on experience maintaining and troubleshooting technology systems. I also contributed to CyberPipeline, a full-stack web application project, where my role focused on backend API testing, Git version control, and Agile practices. I’m passionate about problem-solving, continuous learning, and building tools that make processes more efficient. Outside of tech, I enjoy learning languages, exploring new challenges, and finding creative ways to grow both personally and professionally.</span>',
-    '   &lt;/<span class="dark-blue">p</span>&gt;',
-    '   &lt;<span class="dark-blue">techstack</span>&gt;',
-    '<span id="logos">' + javaLogo + javascriptLogo + csharpLogo + sqlLogo + gitLogo + gitHubLogo + dockerLogo + '</span>',
-    '   &lt;/<span class="dark-blue">techstack</span>&gt;',
     '&lt;/<span class="dark-blue">body</span>&gt;',
     '&lt;/<span class="dark-blue">html</span>&gt;',
 ]
 
-editor.innerHTML = codeLines.map(line => `<div>${line}</div>`).join('');
+const javascriptCodeLines = [
+    '<span class="dark-blue">class</span> <span class="green">AboutMe</span> <span class="bright-yellow">{</span>',
+    '   <span class="dark-blue">constructor</span> <span class="magenta">() {</span>',
+    '       <span class="dark-blue">this</span><span class="white">.</span><span class="light-blue">title</span><span class="white"> =</span>',
+    '<span class="real-text" id="h3-heading">About Me</span>',
+    '       <span class="dark-blue">this</span><span class="white">.</span><span class="light-blue">blurb</span><span class="white"> =</span>',
+    '<span class="real-text paragraph">Hi, I’m Devon Hill, a Computer Science graduate from Kansas State University with experience in software development, testing, and IT support. During my time as a Teaching Assistant, I supported students in debugging and strengthening their programming skills. As a Summer Support Assistant in IT, I gained hands-on experience maintaining and troubleshooting technology systems. I also contributed to CyberPipeline, a full-stack web application project, where my role focused on backend API testing, Git version control, and Agile practices. I’m passionate about problem-solving, continuous learning, and building tools that make processes more efficient. Outside of tech, I enjoy learning languages, exploring new challenges, and finding creative ways to grow both personally and professionally.</span>',
+    '   <span class="magenta">}</span>',
+    '   <span class="pale-yellow">showTechStack</span><span class="magenta">() {</span>',
+    '       <span class="dark-blue">const</span> <span class="sky-blue">techStack</span> <span class="white">=</span> <span class="dark-blue">[</span>',
+    '<span id="logos">' + javaLogo + javascriptLogo + csharpLogo + sqlLogo + gitLogo + gitHubLogo + dockerLogo + '</span>',
+    '       <span class="dark-blue">]</span><span class="white">;</span>',
+    '       <span class="sky-blue">techStack</span><span class="white">.</span><span class="pale-yellow">forEach</span><span class="dark-blue">(</span><span class="light-blue">tech</span> <span class="dark-blue">=></span> <span class="light-blue">console</span><span class="white">.</span><span class="pale-yellow">log</span><span class="bright-yellow">(</span><span class="light-blue">tech</span><span class="bright-yellow">)</span><span class="dark-blue">)</span><span class="white">;</span>',
+    '   <span class="magenta">}</span>',
+    '<span class="bright-yellow">}</span>',
+]
 
-const updateLineNumbers = () => {
-    lineNumbers.innerHTML = '';
-    const divs = editor.children;
+htmlCode.innerHTML += htmlCodeLines.map(line => `<div>${line}</div>`).join(''); javascriptCodeLines.map(line => `<div>${line}</div>`).join('');
+
+const updateLineNumbers = (typeOfCode) => {
+    const divs = typeOfCode.children;
     let num = 1;
     Array.from(divs).forEach((div, index) => {
         const numberOfLines = div.scrollHeight / parseFloat(getComputedStyle(lineNumbers).lineHeight);
@@ -57,6 +67,11 @@ const updateLineNumbers = () => {
             num++;
         }
     });
+
 }
 
-updateLineNumbers();
+updateLineNumbers(htmlCode);
+
+javascriptCode.innerHTML += javascriptCodeLines.map(line => `<div>${line}</div>`).join('');
+
+updateLineNumbers(javascriptCode);

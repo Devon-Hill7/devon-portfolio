@@ -240,7 +240,8 @@ body {
 }
 
 #editor {
-    flex: 1;
+    display: grid;
+    grid-column: 1fr 1fr 1fr;
     line-height: 20px;
     z-index: 0;
     height: 100%;
@@ -267,6 +268,25 @@ body {
 
 .white {
     color: #FFFFFF;
+}
+
+.green {
+    color: #4EC9B0
+}
+
+.bright-yellow {
+    color: #FFFF43
+}
+
+.magenta {
+    color: #C586C0
+}
+
+.pale-yellow {
+    color: #DCDCAA
+}
+.sky-blue {
+    color: #57C2FC;
 }
 .real-text {
     color: #FFFFFF;
@@ -323,3 +343,15 @@ body {
     justify-content: center;
     gap: 15px;
 }
+
+#html-code {
+    grid-row: 1 / 2;
+
+}
+#javascript-code {
+    grid-row: 2 / 3;
+}
+#css-code {
+    grid-row: 3 / -1;
+}
+
