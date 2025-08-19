@@ -241,7 +241,6 @@ body {
 
 #editor {
     flex: 1;
-    overflow-y: auto;
     line-height: 20px;
     z-index: 0;
     height: 100%;
@@ -288,7 +287,7 @@ body {
     line-height: 60px;
 }
 
-#h6-heading {
+#h6-heading, .paragraph {
     font-size: 20px;
     line-height: 20px;
 }
@@ -314,4 +313,13 @@ body {
     scrollbar-color: rgba(150,150,150,0.4) rgba(41,41,41,0.3);
 }
 
+.paragraph {
+    margin: 0 auto;
+    width: 75%;
+}
 
+#logos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
