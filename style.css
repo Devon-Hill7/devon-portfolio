@@ -11,6 +11,7 @@ body, html {
     min-width: 800px;
     min-height: 600px;
     overflow-x: hidden;
+    
 }
 body {
     color: #d4d4d4;
@@ -241,7 +242,7 @@ body {
 
 #editor {
     display: grid;
-    grid-column: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     line-height: 20px;
     z-index: 0;
     height: 100%;
@@ -288,6 +289,10 @@ body {
 .sky-blue {
     color: #57C2FC;
 }
+
+.gold {
+    color: #AC9E62
+}
 .real-text {
     color: #FFFFFF;
     font-family: Monocode;
@@ -302,12 +307,12 @@ body {
     line-height: 100px;
 }
 
-#h3-heading {
+.h3-heading {
     font-size: 60px;
     line-height: 60px;
 }
 
-#h6-heading, .paragraph {
+.h6-heading, .paragraph {
     font-size: 20px;
     line-height: 20px;
 }
@@ -353,5 +358,26 @@ body {
 }
 #css-code {
     grid-row: 3 / -1;
+}
+#typing-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    width: 100%;
+}
+
+#typing {
+    border-right: 2px solid white;
+    display: inline-block;
+    width: auto;
+    
+}
+
+.blinking {
+    animation: cursor 1s step-end infinite;
+}
+@keyframes cursor {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
 }
 
