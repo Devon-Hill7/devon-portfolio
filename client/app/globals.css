@@ -6,8 +6,9 @@
 
 @theme inline {
   --color-background: #00171F;
-  --color-foreground: #08232C;
-  --color-offwhite: #F5F5F5;
+  --color-backgroundend: #000B0F;
+  --color-foreground: #0B2730;
+  --color-offwhite: #F8F7F4;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -15,6 +16,9 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --font-inter: "var(--font-inter)", "sans-serif";
+  --font-spacegrotesk: "var(--font-spacegrotesk)", "sans-serif";
+
 }
 
 
