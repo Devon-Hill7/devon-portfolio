@@ -4,11 +4,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
   --color-background: #00171F;
   --color-backgroundend: #000B0F;
   --color-foreground: #0B2730;
   --color-offwhite: #F8F7F4;
+  --color-orange: #FF6F3C;
+  --radius: 12px;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
