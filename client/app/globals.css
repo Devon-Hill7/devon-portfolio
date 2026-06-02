@@ -21,6 +21,7 @@
   --font-inter: "var(--font-inter)", "sans-serif";
   --font-spacegrotesk: "var(--font-spacegrotesk)", "sans-serif";
 
+
 }
 
 
@@ -35,5 +36,44 @@
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+
+
+}
+
+@layer utilities {
+    @keyframes marquee-to-left {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    @keyframes marquee-to-right {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+ 
+
+  .animation-marquee-frontend {
+    animation: marquee-to-left 60s linear infinite;
+  }
+
+  .animation-marquee-backend {
+    animation: marquee-to-right 40s linear infinite;
+  }
+
+  .animation-marquee-database {
+    animation: marquee-to-left 20s linear infinite;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

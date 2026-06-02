@@ -2,6 +2,7 @@ import NavBar from "@/components/ui/NavBar";
 import { Button } from "@/components/ui/Button";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext,} from "@/components/ui/carousel";
 import ProjectCard from "@/components/ui/ProjectCard";
+import Marquee from "@/components/ui/Marquee";
 
 export default function Home() {
   return (
@@ -39,6 +40,14 @@ export default function Home() {
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
+          </div>
+        </section>
+        <section id="tech-stack" className="min-h-screen">
+          <div className="w-full justify-center flex mt-20 gap-15 flex-col">
+            <h2 className="text-6xl font-spacegrotesk text-center text-offwhite">Tech Stack</h2>
+              <Marquee label="Frontend" gap="frontend" techStack="frontend" animation="frontend"></Marquee>
+              <Marquee label="Backend" gap="backend" techStack="backend" animation="backend"></Marquee>
+              <Marquee label="Database" gap="frontend" techStack="database" animation="database"></Marquee>
           </div>
         </section>
       </div>
