@@ -45,9 +45,9 @@ export default function Home() {
         <section id="tech-stack" className="min-h-screen">
           <div className="w-full justify-center flex mt-20 gap-15 flex-col">
             <h2 className="text-6xl font-spacegrotesk text-center text-offwhite">Tech Stack</h2>
-              <Marquee label="Frontend" gap="frontend" techStack="frontend" animation="frontend"></Marquee>
-              <Marquee label="Backend" gap="backend" techStack="backend" animation="backend"></Marquee>
-              <Marquee label="Database" gap="frontend" techStack="database" animation="database"></Marquee>
+              <Marquee techStack="frontend"></Marquee>
+              <Marquee techStack="backend"></Marquee>
+              <Marquee techStack="database"></Marquee>
           </div>
         </section>
       </div>

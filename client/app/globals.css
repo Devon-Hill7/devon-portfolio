@@ -73,6 +73,11 @@
     animation: marquee-to-left 20s linear infinite;
   }
 
+  .group:hover .animation-marquee-frontend,
+  .group:hover .animation-marquee-backend,
+  .group:hover .animation-marquee-database {
+    animation-play-state: paused;
+  }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
