@@ -14,7 +14,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, techStack, repoUrl, liveUrl }: ProjectCardProps) => {
     return (
-        <div className="w-full h-full rounded-2xl p-5 bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.2)]">
+    <div className="w-full h-full rounded-2xl p-5 bg-white/10 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.2)]">
             <Card className="w-full gap-5">
                 <CardHeader>
                     <CardTitle >{title}</CardTitle>

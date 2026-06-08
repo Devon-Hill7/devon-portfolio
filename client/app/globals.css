@@ -20,6 +20,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
   --font-inter: "var(--font-inter)", "sans-serif";
   --font-spacegrotesk: "var(--font-spacegrotesk)", "sans-serif";
+  
 
 
 }
@@ -27,7 +28,6 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
   }
   html {
     @apply font-sans;
@@ -81,4 +81,40 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
+  .portfolio-background {
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 111, 60, 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(255, 111, 60, 0.08),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle,
+      rgba(248, 247, 244, 0.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--color-background),
+      var(--color-backgroundend)
+    );
+
+  background-size:
+    auto,
+    auto,
+    36px 36px,
+    auto;
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    repeat,
+    no-repeat;
+}
 }
