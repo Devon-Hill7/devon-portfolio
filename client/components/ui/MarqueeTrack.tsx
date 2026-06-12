@@ -1,6 +1,6 @@
 import React from 'react'
 import MarqueeTechPill from './MarqueeTechPill'
-import { ReactNode, memo } from 'react'
+import { memo } from 'react'
 
 import { HoverCard, HoverCardTrigger, HoverCardContent } from './hover-card'
 
