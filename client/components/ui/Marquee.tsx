@@ -1,10 +1,6 @@
 import React from 'react'
 import MarqueeTrack from './MarqueeTrack'
 
-
-
-
-
 interface MarqueeProps {
    techStack:  'frontend' | 'backend' | 'database'
 }

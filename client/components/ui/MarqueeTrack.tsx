@@ -1,8 +1,12 @@
+'use client';
+
 import React from 'react'
 import MarqueeTechPill from './MarqueeTechPill'
 import { memo } from 'react'
 
 import { HoverCard, HoverCardTrigger, HoverCardContent } from './hover-card'
+import { useProjectNavigation } from '../ProjectNavigationProvider'
+import { projects } from "@/lib/projects"
 
 interface Tech {
     name : string,
@@ -192,14 +196,16 @@ const databaseTechStack: Tech[] = [
 
 ]
 
-const projectsUsedIn : { [key: string]: string[] } = {
-  React: ["My Spanish Diary"],
-  TypeScript: ["Portfolio"],
-  "Tailwind CSS": ["Portfolio"],
-  "Next.js": ["Portfolio"],
-  "Spring Boot": ["My Spanish Diary"],
-  Java: ["My Spanish Diary"],
-  PostgreSQL: ["My Spanish Diary"]
+type UsedProject = (typeof projects)[number]
+
+const projectsUsedIn : Record<string, UsedProject[]> = {
+  React:  projects.filter(p => p.techStack.includes("React")),
+  TypeScript: projects.filter(p => p.techStack.includes("TypeScript")),
+  "Tailwind CSS": projects.filter(p => p.techStack.includes("TailWindCSS")),
+  "Next.js": projects.filter(p => p.techStack.includes("Next.js")),
+  "Spring Boot": projects.filter(p => p.techStack.includes("Spring Boot")),
+  Java: projects.filter(p => p.techStack.includes("Java")),
+  PostgreSQL: projects.filter(p => p.techStack.includes("PostgreSQL"))
 }
 
 const techStacks = {
@@ -214,6 +220,9 @@ const techStacks = {
 
 const MarqueeTrack = ({ techStack }: MarqueeTrackProps) => {
   const selectedTechStack = techStacks[techStack]
+
+  const { goToProject } = useProjectNavigation()
+
   return (
         <div className={`flex ${animationMap[techStack]} ${gapMap[techStack]} ${paddingMap[techStack]}`} aria-hidden="true">
           {[...selectedTechStack].map((tech, index) => (
@@ -231,8 +240,8 @@ const MarqueeTrack = ({ techStack }: MarqueeTrackProps) => {
               </div>
               <ul>
                 {[...projectsUsedIn[tech.name]].map((project, idx) => (
-                  <li key={idx} className="text-sm">
-                    {project}
+                  <li key={idx} className="text-sm hover:underline" onClick={() => goToProject(project.id)}>
+                    {project.title}
                   </li>
                 ))}
               </ul>
