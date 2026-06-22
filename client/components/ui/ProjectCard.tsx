@@ -33,15 +33,19 @@ const ProjectCard = ({ title, description, image, techStack, repoUrl, liveUrl }:
                 </CardContent>
                 <CardFooter>
                     <div className="w-full flex justify-center">
-                        <Button size="lg" className="text-xl px-4 py-2 rounded-lg bg-orange shadow-[-0.45px_-0.75px_1px_rgba(255,185,140,0.6),0.45px_8px_8px_rgba(0,13,18,0.6)]
-                             hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[[-0.45px_-0.75px_1px_rgba(255,185,140,0.6), 0_16px_40px_rgba(0,0,0,0.28)]">
-                                View Repo
-                        </Button> 
+                        <a href={repoUrl} target="_blank">
+                            <Button size="lg" className="text-xl px-4 py-2 rounded-lg bg-orange shadow-[-0.45px_-0.75px_1px_rgba(255,185,140,0.6),0.45px_8px_8px_rgba(0,13,18,0.6)]
+                                hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[[-0.45px_-0.75px_1px_rgba(255,185,140,0.6), 0_16px_40px_rgba(0,0,0,0.28)]">
+                                    View Repo
+                            </Button> 
+                        </a>
                         {liveUrl && (
-                            <Button size="lg" className="text-xl px-4 py-2 rounded-lg bg-green shadow-[-0.45px_-0.75px_1px_rgba(144,238,144,0.6),0.45px_8px_8px_rgba(0,13,18,0.6)]
-                             hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[[-0.45px_-0.75px_1px_rgba(144,238,144,0.6), 0_16px_40px_rgba(0,0,0,0.28)]">
-                                View Live
-                            </Button>
+                            <a href={liveUrl} target="_blank">
+                                <Button size="lg" className="text-xl px-4 py-2 rounded-lg bg-green shadow-[-0.45px_-0.75px_1px_rgba(144,238,144,0.6),0.45px_8px_8px_rgba(0,13,18,0.6)]
+                                hover:-translate-y-1 hover:scale-[1.04] hover:shadow-[[-0.45px_-0.75px_1px_rgba(144,238,144,0.6), 0_16px_40px_rgba(0,0,0,0.28)]">
+                                    View Live
+                                </Button>
+                            </a>
                         )}
                     </div>
                 </CardFooter>

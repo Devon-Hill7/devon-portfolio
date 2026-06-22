@@ -25,8 +25,10 @@ const ProjectsSection = () => {
                     </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious />
+                {/* Will be uncommented when more projects are added */}
+                {/* <CarouselPrevious />
                 <CarouselNext />
+                */}
             </Carousel>
         </div>
     </section>

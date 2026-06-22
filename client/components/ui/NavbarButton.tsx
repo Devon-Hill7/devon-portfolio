@@ -3,13 +3,16 @@ import { Button } from "./Button"
 
 type NavbarButtonProps = {
   text: string
+  sectionId: string
 }
 
-const NavbarButton = ({ text }: NavbarButtonProps) => {
+const NavbarButton = ({ text, sectionId}: NavbarButtonProps) => {
   return (
-    <Button variant="ghost" size="xs">
-      {text}
-    </Button>
+    <a href={sectionId}>
+      <Button variant="ghost" size="xs">
+        {text}
+      </Button>
+    </a>
   )
 }
 

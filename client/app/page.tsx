@@ -21,9 +21,11 @@ export default function Home() {
               <p className="text-xl font-inter text-offwhite">Focused on developing scalable full-stack applications with secure backend systems, responsive frontend designs, and modern web technologies.</p>
             </div>
             <div className="w-full items-center justify-center flex mt-20">
-              <Button variant="default" size="xl">
-                  View Projects
-              </Button>
+              <a href='#projects'>
+                <Button variant="default" size="xl">
+                    View Projects
+                </Button>
+              </a>
             </div>
           </section>
           <ProjectsSection></ProjectsSection>
