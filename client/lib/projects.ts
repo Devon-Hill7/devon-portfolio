@@ -23,8 +23,8 @@ export const projects: Project[] = [
     id: "portfolio",
     title: "Portfolio",
     description:
-      "Full-stack journaling app with grammar feedback and secure user authentication",
-    image: "/images/MySpanishDiaryScreenshot.png",
+      "Source code for this portfolio, featuring reusable components, responsive design, and a focus on clean user experience",
+    image: "/images/PortfolioHero.png",
     techStack: ["Next.js", "TypeScript", "TailWindCSS"],
     repoUrl: "https://github.com/Devon-Hill7/devon-portfolio",
   }
