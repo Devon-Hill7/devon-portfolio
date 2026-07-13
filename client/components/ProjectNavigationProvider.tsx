@@ -1,8 +1,9 @@
 "use client"
 
-import { createContext, useContext, useRef, ReactNode } from "react"
-import type { CarouselApi } from "@/components/ui/carousel"
-import { projects } from "@/lib/projects"
+import { createContext, useContext, useRef, ReactNode } from "react";
+import type { CarouselApi } from "@/components/ui/carousel";
+import { projects } from "@/lib/projects";
+
 
 type ProjectNavigationContextType = {
   setCarouselApi: (api: CarouselApi | null) => void

@@ -62,15 +62,15 @@
  
 
   .animation-marquee-frontend {
-    animation: marquee-to-left 60s linear infinite;
+    animation: marquee-to-left 70s linear infinite;
   }
 
   .animation-marquee-backend {
-    animation: marquee-to-right 40s linear infinite;
+    animation: marquee-to-right 50s linear infinite;
   }
 
   .animation-marquee-database {
-    animation: marquee-to-left 20s linear infinite;
+    animation: marquee-to-left 30s linear infinite;
   }
 
   .group:hover .animation-marquee-frontend,

@@ -1,18 +1,18 @@
-import React from 'react'
-import NavbarButton from "./NavbarButton"
+import React from "react";
+import NavbarButton from "./NavbarButton";
 
 const NavBar = () => {
   return (
-    <div className="sticky top-2 left-1/2 -translate-x-1/2 z-50 bg-foreground flex w-1/3 rounded-full justify-between align-middle shadow-[-0.45px_-0.75px_1px_rgba(42,92,107,1),0.45px_0.75px_6px_rgba(0,13,18,0.6)]">
-      <div className="max-w-5xl w-full mx-auto flex justify-between align-middle px-4 py-2">
-        <NavbarButton text="Home" sectionId="#hero"/>
-        <NavbarButton text="Projects" sectionId="#projects"/>
-        <NavbarButton text="Tech Stack" sectionId="#tech-stack"/>
-        <NavbarButton text="About" sectionId="#about"/>
-        <NavbarButton text="Contact" sectionId="#contact"/>
+    <div className="sticky top-4 left-1/2 -translate-x-1/2 z-50 w-fit bg-foreground rounded-full shadow-[-0.45px_-0.75px_1px_rgba(42,92,107,1),0.45px_0.75px_6px_rgba(0,13,18,0.6)]">
+      <div className="flex items-center gap-5 xl:gap-7 px-5 xl:px-7 py-2">
+        <NavbarButton text="Home" sectionId="#hero" />
+        <NavbarButton text="Projects" sectionId="#projects" />
+        <NavbarButton text="Tech Stack" sectionId="#tech-stack" />
+        <NavbarButton text="About" sectionId="#about" />
+        <NavbarButton text="Contact" sectionId="#contact" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

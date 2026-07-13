@@ -1,3 +1,5 @@
+"use client";
+
 import NavBar from "@/components/ui/NavBar";
 import ProjectsSection from "@/components/ProjectsSection";
 import TechStackSection from "@/components/TechStackSection";

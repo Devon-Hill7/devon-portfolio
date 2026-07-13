@@ -225,7 +225,7 @@ const MarqueeTrack = ({ techStack }: MarqueeTrackProps) => {
 
   return (
         <div className={`flex ${animationMap[techStack]} ${gapMap[techStack]} ${paddingMap[techStack]}`} aria-hidden="true">
-          {[...selectedTechStack].map((tech, index) => (
+          {[...selectedTechStack, ...selectedTechStack].map((tech, index) => (
           <HoverCard key={`real-${index}`}>
             <HoverCardTrigger>
               <div className="shrink-0">
