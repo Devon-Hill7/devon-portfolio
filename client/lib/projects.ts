@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "Portfolio",
     description:
       "Source code for this portfolio, featuring reusable components, responsive design, and a focus on clean user experience",
-    image: "/images/PortfolioHero.png",
+    image: "/images/portfolioHero.png",
     techStack: ["Next.js", "TypeScript", "TailWindCSS"],
     repoUrl: "https://github.com/Devon-Hill7/devon-portfolio",
   }
