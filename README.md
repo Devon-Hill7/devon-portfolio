@@ -88,3 +88,4 @@ Live Demo: https://devonhill.vercel.app/
 Devon Hill
 - LinkedIn: https://www.linkedin.com/in/devon-hill-3958431b8/
 - Portfolio: https://devonhill.vercel.app/
+- Email: devonhill7@outlook.com
