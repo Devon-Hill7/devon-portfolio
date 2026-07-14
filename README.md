@@ -81,7 +81,7 @@ http://localhost:3000
 ```
 
 ### Deployment
-This project is deployed using vercel
+This project is deployed using vercel<br>
 Live Demo: https://devonhill.vercel.app/
 
 ### Author
