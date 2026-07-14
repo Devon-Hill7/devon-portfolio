@@ -86,5 +86,5 @@ Live Demo: https://devonhill.vercel.app/
 
 ### Author
 Devon Hill
-LinkedIn: https://www.linkedin.com/in/devon-hill-3958431b8/
-Portfolio: https://vercel.com/devon-hill7s-projects
+- LinkedIn: https://www.linkedin.com/in/devon-hill-3958431b8/
+- Portfolio: https://devonhill.vercel.app/
